@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRCP AGENCY - Ultra Luxury VIP Concierge Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0b0c10',
+                        obsidianLight: '#12141a',
+                        cardDark: '#161922',
+                        gold: '#dfa835',
+                        goldLight: '#f3d077',
+                        goldDark: '#996f1d',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0b0c10; color: #f1f1f5; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 7px; height: 7px; }
+        ::-webkit-scrollbar-track { background: #0b0c10; }
+        ::-webkit-scrollbar-thumb { background: #262a36; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #dfa835; }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3d077 0%, #dfa835 50%, #996f1d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #f3d077 0%, #dfa835 60%, #a87d20 100%);
+        }
+        .gold-border {
+            border-color: rgba(223, 168, 53, 0.3);
+        }
+        .glass-card {
+            background: rgba(22, 25, 34, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(223, 168, 53, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+        }
+        .glow-gold {
+            box-shadow: 0 0 30px -5px rgba(223, 168, 53, 0.25);
+        }
+        .glow-gold-sm {
+            box-shadow: 0 0 12px -2px rgba(223, 168, 53, 0.2);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.35s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-gold selection:text-obsidian">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glass-card border-b border-zinc-800/80 px-4 lg:px-10 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="navigate('home')">
+            <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center glow-gold-sm text-obsidian font-bold text-xl">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <div>
+                <h1 class="font-serif text-xl lg:text-2xl font-bold tracking-wider gold-gradient-text">TRCP AGENCY</h1>
+                <p class="text-[10px] text-zinc-400 tracking-widest uppercase" id="nav-subtitle">VIP Concierge & Entertainment</p>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-3">
+            <!-- Language Switcher Toggle -->
+            <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-xl border gold-border bg-obsidianLight text-gold text-xs font-semibold hover:bg-gold hover:text-obsidian transition-all duration-300 flex items-center space-x-2 shadow">
+                <i class="fa-solid fa-globe"></i>
+                <span id="lang-toggle-text">English / বাংলা</span>
+            </button>
+
+            <!-- Dynamic Authentication Container -->
+            <div id="nav-auth-container" class="flex items-center space-x-2"></div>
+        </div>
+    </header>
+
+    <!-- App Dynamic Main Body -->
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-7xl" id="app-container">
+        <!-- Rendered by JavaScript -->
+    </main>
+
+    <!-- Floating Helpline Support Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3">
+        <div id="helpline-dropdown" class="hidden glass-card p-5 rounded-2xl shadow-2xl border gold-border w-72 animate-fade-in space-y-3">
+            <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
+                <span class="text-xs font-bold uppercase tracking-wider gold-gradient-text" data-i18n="helpline_title">Official VIP Helpline</span>
+                <button onclick="toggleHelpline()" class="text-zinc-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="space-y-2 text-xs">
+                <a href="https://wa.me/8801823020470" target="_blank" class="flex items-center space-x-3 p-2.5 rounded-xl bg-obsidianLight hover:bg-zinc-800 text-emerald-400 transition border border-emerald-950">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <div>
+                        <div class="font-bold text-white">WhatsApp Support</div>
+                        <div class="text-[11px] text-zinc-400">01823020470</div>
+                    </div>
+                </a>
+                <a href="https://t.me/crsaaadmin03" target="_blank" class="flex items-center space-x-3 p-2.5 rounded-xl bg-obsidianLight hover:bg-zinc-800 text-sky-400 transition border border-sky-950">
+                    <i class="fa-brands fa-telegram text-xl"></i>
+                    <div>
+                        <div class="font-bold text-white">Telegram Admin 1</div>
+                        <div class="text-[11px] text-zinc-400">@crsaaadmin03</div>
+                    </div>
+                </a>
+                <a href="https://t.me/ziavai099" target="_blank" class="flex items-center space-x-3 p-2.5 rounded-xl bg-obsidianLight hover:bg-zinc-800 text-sky-400 transition border border-sky-950">
+                    <i class="fa-brands fa-telegram text-xl"></i>
+                    <div>
+                        <div class="font-bold text-white">Telegram Admin 2</div>
+                        <div class="text-[11px] text-zinc-400">@ziavai099</div>
+                    </div>
+                </a>
+            </div>
+            <div class="text-[10px] text-zinc-400 text-center pt-2 border-t border-zinc-800" data-i18n="helpline_note">Contact Helpline for modifications or cancellation.</div>
+        </div>
+
+        <button onclick="toggleHelpline()" class="w-14 h-14 rounded-full gold-gradient-bg text-obsidian flex items-center justify-center text-2xl shadow-2xl glow-gold hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-headset"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-card border-t border-zinc-800/80 py-6 text-center text-xs text-zinc-500">
+        <p>&copy; 2026 TRCP AGENCY. High Precision Concierge Network. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Global Dynamic Modal Viewer -->
+    <div id="modal-wrapper" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <!-- Content injected dynamically -->
+    </div>
+
+    <!-- Application Engine Logic Script -->
+    <script>
+        // --- BILINGUAL TRANSLATION DICTIONARY ---
+        const dictionary = {
+            en: {
+                nav_subtitle: "VIP Concierge & Entertainment",
+                helpline_title: "Official VIP Helpline",
+                helpline_note: "Contact Helpline for modifications or cancellation.",
+                welcome_title: "TRCP VIP AGENCY",
+                welcome_subtitle: "Experience unmatched luxury, discretion, and premium concierge hospitality.",
+                login_tab: "Client Login",
+                register_tab: "Client Registration",
+                admin_tab: "Admin Gateway",
+                phone_ph: "Phone Number (e.g. 01XXXXXXXXX)",
+                pass_ph: "4-Digit PIN Password",
+                name_ph: "Full Name",
+                login_btn: "Login to Account",
+                register_btn: "Create Account",
+                admin_login_btn: "Access Admin Dashboard",
+                admin_pass_ph: "Admin Password",
+                real_service_title: "Real Service",
+                real_service_desc: "In-person premium companion and VIP service across major locations in Bangladesh.",
+                video_service_title: "Video Service",
+                video_service_desc: "High-definition 1-on-1 private HD video streams with scheduled profiles.",
+                live_show_title: "Live Show Packages",
+                live_show_desc: "Unlimited VIP broadcasting access over 10-day, 1-month, or 3-month durations.",
+                book_now: "Book Service",
+                view_history: "My Bookings",
+                logout: "Sign Out",
+                admin_dashboard: "Admin Dashboard",
+                back_home: "Back to Main Gateway",
+                advance_notice: "Payment Rule: For rates = 2000 BDT, advance is 50% (1000 BDT). For rates > 2000 BDT, fixed advance is 1230 BDT. Remaining balance paid via Hand Cash.",
+                gateway_title: "Official Payment Gateways",
+                send_money_notice: "Strictly Send Money or Cash In accepted",
+                copy_btn: "Copy Number",
+                copied: "Copied!",
+                pay_method_label: "Payment Method Used",
+                send_money_opt: "Send Money (Upload Screenshot)",
+                cash_in_opt: "Cash In (Enter Last 4 Digits)",
+                screenshot_label: "Upload Screenshot (From Local Gallery)",
+                last4_label: "Enter Last 4 Digits of Sender Number",
+                submit_booking: "Confirm & Submit Booking",
+                booking_success: "Payment received. Please wait for admin confirmation.",
+                admin_users: "Client Management",
+                admin_services: "Service Controls",
+                admin_profiles: "Collection Profiles",
+                admin_matrix: "Schedule Matrix & Rules",
+                admin_bookings: "Bookings & Settlements",
+                admin_gateways: "Gateway Numbers",
+                approve: "Approve Booking",
+                reject: "Reject & Purge Fake",
+                ban: "Ban Client",
+                unban: "Unban Client",
+                add_profile: "Add Collection Profile",
+                edit: "Edit",
+                delete: "Delete",
+                status_available: "Available",
+                status_unavailable: "Unavailable"
+            },
+            bn: {
+                nav_subtitle: "ভিআইপি কনসিয়র্জ ও সার্ভিসেস",
+                helpline_title: "অফিসিয়াল ভিআইপি হেল্পলাইন",
+                helpline_note: "বুকিং সংশোধন বা বাতিলের জন্য হেল্পলাইনে যোগাযোগ করুন।",
+                welcome_title: "টিআরসিপি ভিআইপি এজেন্সি",
+                welcome_subtitle: "সর্বোচ্চ মানের গোপনীয়তা ও অভিজাত সেবার অভিজ্ঞতা নিন।",
+                login_tab: "ক্লায়েন্ট লগইন",
+                register_tab: "নতুন অ্যাকাউন্ট",
+                admin_tab: "অ্যাডমিন গেটওয়ে",
+                phone_ph: "মোবাইল নম্বর (যেমন: 01XXXXXXXXX)",
+                pass_ph: "৪-সংখ্যার পিন পাসওয়ার্ড",
+                name_ph: "আপনার সম্পূর্ণ নাম",
+                login_btn: "লগইন করুন",
+                register_btn: "অ্যাকাউন্ট তৈরি করুন",
+                admin_login_btn: "অ্যাডমিন প্যানেলে প্রবেশ",
+                admin_pass_ph: "অ্যাডমিন পাসওয়ার্ড",
+                real_service_title: "রিয়েল সার্ভিস",
+                real_service_desc: "বাংলাদেশের শীর্ষস্থানে সরাসরি প্রিমিয়াম ইন-পার্সন ভিআইপি সেবা।",
+                video_service_title: "ভিডিও সার্ভিস",
+                video_service_desc: "প্রাইভেট এইচডি লাইভ ভিডিও কল ও সময়ভিত্তিক ডিজিটাল সেশন।",
+                live_show_title: "লাইভ শো প্যাকেজ",
+                live_show_desc: "১০-দিন, ১-মাস বা ৩-মাসের জন্য এক্সক্লুসিভ লাইভ ব্রডকাস্টিং অ্যাক্সেস।",
+                book_now: "বুকিং করুন",
+                view_history: "আমার বুকিং",
+                logout: "লগআউট",
+                admin_dashboard: "অ্যাডমিন ড্যাশবোর্ড",
+                back_home: "মূল পাতায় ফিরুন",
+                advance_notice: "পেমেন্ট নিয়ম: ২০০০ টাকা হলে অ্যাডভান্স ৫০% (১০০০ টাকা)। ২০০০ টাকার বেশি হলে নির্দিষ্ট ১২৩০ টাকা অ্যাডভান্স। বাকি টাকা হ্যান্ড ক্যাশ।",
+                gateway_title: "অফিসিয়াল পেমেন্ট নম্বরসমূহ",
+                send_money_notice: "শুধুমাত্র সেন্ড মানি অথবা ক্যাশ ইন গ্রহণযোগ্য",
+                copy_btn: "কপি নম্বর",
+                copied: "কপি হয়েছে!",
+                pay_method_label: "পেমেন্ট পদ্ধতি নির্বাচন করুন",
+                send_money_opt: "সেন্ড মানি (স্ক্রিনশট আপলোড করুন)",
+                cash_in_opt: "ক্যাশ ইন (শেষ ৪ ডিজিট দিন)",
+                screenshot_label: "গ্যালারি থেকে স্ক্রিনশট আপলোড করুন",
+                last4_label: "প্রেরক নম্বরের শেষ ৪ ডিজিট লিখুন",
+                submit_booking: "বুকিং নিশ্চিত করুন",
+                booking_success: "পেমেন্ট গৃহীত হয়েছে। অ্যাডমিন অনুমোদনের জন্য অপেক্ষা করুন।",
+                admin_users: "ক্লায়েন্ট তালিকা",
+                admin_services: "সার্ভিস কন্ট্রোল",
+                admin_profiles: "কালেকশন প্রোফাইল",
+                admin_matrix: "শিডিউল ম্যাট্রিক্স",
+                admin_bookings: "বুকিং রিভিউ ও পেমেন্ট",
+                admin_gateways: "পেমেন্ট গেটওয়ে নম্বর",
+                approve: "অনুমোদন করুন",
+                reject: "বাতিল ও মুছে ফেলুন",
+                ban: "ব্যান করুন",
+                unban: "আনব্যান করুন",
+                add_profile: "নতুন প্রোফাইল যোগ করুন",
+                edit: "এডিট",
+                delete: "ডিলিট",
+                status_available: "উপলব্ধ",
+                status_unavailable: "অনুপলব্ধ"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'bn' : 'en';
+            document.getElementById('lang-toggle-text').innerText = currentLang === 'en' ? 'English / বাংলা' : 'বাংলা / EN';
+            renderCurrentView();
+        }
+
+        function t(key) {
+            return dictionary[currentLang][key] || key;
+        }
+
+        // --- PRE-SEEDED SYSTEM DATA ---
+        const DEFAULT_GATEWAYS = {
+            bkash: "01847257668",
+            nagad: "01971355287",
+            rocket: "01788311044"
+        };
+
+        const PRESEEDED_LOCATIONS = {
+            "Dhaka": [
+                { name: "Uttara", subAreas: [{ name: "Sector 3", type: "Flat" }, { name: "Sector 7", type: "Hotel" }, { name: "Sector 12", type: "Hotel" }] },
+                { name: "Mirpur", subAreas: [{ name: "11.5 Eastern Housing D Block", type: "Flat" }, { name: "Mirpur 12 Bus Stand", type: "Hotel" }] },
+                { name: "Farmgate", subAreas: [{ name: "Panthapath", type: "Flat" }, { name: "Tejturi Bazar", type: "Hotel" }] },
+                { name: "Dhanmondi", subAreas: [{ name: "10R/A", type: "Flat" }] },
+                { name: "Gulshan", subAreas: [{ name: "Shahjadpur", type: "Hotel" }] },
+                { name: "Banani", subAreas: [{ name: "C Block", type: "Flat" }] }
+            ],
+            "Chittagong": [
+                { name: "Feni", subAreas: [{ name: "Mohipal", type: "Hotel" }] },
+                { name: "Sitakunda", subAreas: [{ name: "College Road", type: "Both" }] },
+                { name: "Hathazari", subAreas: [{ name: "Hathazari Sadar", type: "Both" }] },
+                { name: "Kotwali", subAreas: [{ name: "Station Road", type: "Hotel" }] },
+                { name: "GEC", subAreas: [{ name: "GEC Circle", type: "Flat" }] },
+                { name: "Agrabad", subAreas: [{ name: "Commercial Zone", type: "Both" }] }
+            ],
+            "Cox's Bazar": [
+                { name: "Beach Zone", subAreas: [{ name: "Sugandha Point", type: "Hotel" }, { name: "Kolatoli Road", type: "Hotel" }] }
+            ],
+            "Rajshahi": [
+                { name: "Rajshahi Sadar", subAreas: [{ name: "Bindur Mor", type: "Flat" }, { name: "Saheb Bazar", type: "Both" }] }
+            ],
+            "Khulna": [
+                { name: "Khulna City", subAreas: [{ name: "Shib Bari", type: "Both" }] }
+            ],
+            "Barishal": [
+                { name: "Barishal City", subAreas: [{ name: "Sadar Road", type: "Hotel" }] }
+            ],
+            "Cumilla": [
+                { name: "Cumilla Town", subAreas: [{ name: "Kandirpar", type: "Flat" }] }
+            ],
+            "Habiganj": [
+                { name: "Habiganj Sadar", subAreas: [{ name: "Notun Bridge", type: "Hotel" }, { name: "Shayestanagar", type: "Flat" }, { name: "Kalibari", type: "Hotel" }, { name: "Baby Stand", type: "Flat" }] }
+            ],
+            "Sylhet": [
+                { name: "Sylhet City", subAreas: [{ name: "Bandar Bazar", type: "Hotel" }, { name: "Zindabazar", type: "Flat" }, { name: "Madina Market", type: "Both" }, { name: "Darga Gate", type: "Hotel" }, { name: "Amberkhana", type: "Flat" }] }
+            ]
+        };
+
+        const INITIAL_PROFILES = [
+            { id: 101, code: "01", name: "Anika Rahman", category: "Medium", photos: ["https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80", "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"], video: "", status: "available", customRate: null },
+            { id: 102, code: "02", name: "Sadhona Islam", category: "Medium", photos: ["https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80"], video: "", status: "available", customRate: null },
+            { id: 103, code: "03", name: "Samantha Chowdhury", category: "Medium", photos: ["https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80"], video: "", status: "available", customRate: null },
+            { id: 104, code: "101", name: "Zoya Jahan", category: "Premium", photos: ["https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"], video: "", status: "available", customRate: null },
+            { id: 105, code: "102", name: "Nusrat Khan", category: "Premium", photos: ["https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80"], video: "", status: "available", customRate: null },
+            { id: 106, code: "103", name: "Meera Sultana", category: "Premium", photos: ["https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80"], video: "", status: "available", customRate: null },
+            { id: 107, code: "301", name: "Mehjabin Kazi", category: "New Special", photos: ["https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80"], video: "", status: "available", customRate: null },
+            { id: 108, code: "302", name: "Aria Roy", category: "New Special", photos: ["https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"], video: "", status: "available", customRate: null }
+        ];
+
+        // --- STORAGE INITIALIZATION ---
+        function initializeDatabase() {
+            if (!localStorage.getItem('trcp_gateways')) localStorage.setItem('trcp_gateways', JSON.stringify(DEFAULT_GATEWAYS));
+            if (!localStorage.getItem('trcp_locations')) localStorage.setItem('trcp_locations', JSON.stringify(PRESEEDED_LOCATIONS));
+            if (!localStorage.getItem('trcp_profiles')) localStorage.setItem('trcp_profiles', JSON.stringify(INITIAL_PROFILES));
+            if (!localStorage.getItem('trcp_users')) localStorage.setItem('trcp_users', JSON.stringify([]));
+            if (!localStorage.getItem('trcp_bookings')) localStorage.setItem('trcp_bookings', JSON.stringify([]));
+            if (!localStorage.getItem('trcp_services')) localStorage.setItem('trcp_services', JSON.stringify([
+                { id: 1, name: "Real Service", active: true },
+                { id: 2, name: "Video Service", active: true },
+                { id: 3, name: "Live Show", active: true }
+            ]));
+            if (!localStorage.getItem('trcp_memberships')) localStorage.setItem('trcp_memberships', JSON.stringify([
+                { id: 1, name: "Silver VIP", perk: "Standard Access" },
+                { id: 2, name: "Gold VIP", perk: "Priority Allocation" },
+                { id: 3, name: "Diamond Elite", perk: "Full Concierge Suite" }
+            ]));
+            if (!localStorage.getItem('trcp_matrix')) localStorage.setItem('trcp_matrix', JSON.stringify({})); 
+            // trcp_matrix schema: { "YYYY-MM-DD_SubAreaName": ["code1", "code2"] }
+        }
+        initializeDatabase();
+
+        // --- STATE MANAGERS ---
+        let currentView = 'home';
+        let currentUser = JSON.parse(localStorage.getItem('trcp_current_user')) || null;
+        let isAdminLoggedIn = localStorage.getItem('trcp_admin_logged') === 'true';
+
+        function navigate(view) {
+            currentView = view;
+            renderCurrentView();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Router
+        function renderCurrentView() {
+            renderNavAuth();
+            const container = document.getElementById('app-container');
+            container.innerHTML = '';
+
+            if (currentView === 'home') container.innerHTML = renderHomeView();
+            else if (currentView === 'login') container.innerHTML = renderLoginView();
+            else if (currentView === 'register') container.innerHTML = renderRegisterView();
+            else if (currentView === 'admin_login') container.innerHTML = renderAdminLoginView();
+            else if (currentView === 'admin_dashboard' && isAdminLoggedIn) container.innerHTML = renderAdminDashboardView();
+            else if (currentView === 'client_history' && currentUser) container.innerHTML = renderClientHistoryView();
+            else if (currentView === 'book_real' && currentUser) container.innerHTML = renderBookRealView();
+            else if (currentView === 'book_video' && currentUser) container.innerHTML = renderBookVideoView();
+            else if (currentView === 'book_live' && currentUser) container.innerHTML = renderBookLiveView();
+            else {
+                currentView = 'home';
+                container.innerHTML = renderHomeView();
+            }
+        }
+
+        function renderNavAuth() {
+            const container = document.getElementById('nav-auth-container');
+            if (isAdminLoggedIn) {
+                container.innerHTML = `
+                    <button onclick="navigate('admin_dashboard')" class="px-3 py-1.5 rounded-xl gold-gradient-bg text-obsidian text-xs font-bold shadow glow-gold-sm flex items-center space-x-1">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <span>${t('admin_dashboard')}</span>
+                    </button>
+                    <button onclick="adminLogout()" class="px-3 py-1.5 rounded-xl bg-red-950/80 border border-red-800 text-red-300 text-xs hover:bg-red-900 transition">
+                        <i class="fa-solid fa-power-off"></i>
+                    </button>
+                `;
+            } else if (currentUser) {
+                container.innerHTML = `
+                    <button onclick="navigate('client_history')" class="px-3 py-1.5 rounded-xl bg-obsidianLight border gold-border text-gold text-xs font-semibold hover:bg-zinc-800 transition flex items-center space-x-1">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>${t('view_history')} (${currentUser.name})</span>
+                    </button>
+                    <button onclick="clientLogout()" class="px-3 py-1.5 rounded-xl bg-red-950/60 border border-red-800/60 text-red-300 text-xs hover:bg-red-900 transition">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                `;
+            } else {
+                container.innerHTML = `
+                    <button onclick="navigate('login')" class="px-3 py-1.5 rounded-xl bg-obsidianLight border gold-border text-gold text-xs font-semibold hover:bg-gold hover:text-obsidian transition">
+                        ${t('login_tab')}
+                    </button>
+                    <button onclick="navigate('admin_login')" class="p-2 text-zinc-500 hover:text-gold transition text-sm" title="Admin Login">
+                        <i class="fa-solid fa-lock"></i>
+                    </button>
+                `;
+            }
+        }
+
+        // --- VIEWS GENERATOR ---
+
+        function renderHomeView() {
+            return `
+                <div class="space-y-12 py-4">
+                    <!-- Hero Unit -->
+                    <div class="text-center space-y-4 max-w-3xl mx-auto animate-fade-in">
+                        <div class="inline-block p-2 px-4 rounded-full bg-gold/10 border gold-border text-gold text-xs font-bold tracking-widest uppercase">
+                            <i class="fa-solid fa-gem mr-1"></i> VERIFIED VIP NETWORK
+                        </div>
+                        <h2 class="font-serif text-4xl lg:text-6xl font-bold text-white tracking-tight">${t('welcome_title')}</h2>
+                        <p class="text-zinc-400 text-sm lg:text-base max-w-2xl mx-auto">${t('welcome_subtitle')}</p>
+                    </div>
+
+                    <!-- Services Dynamic Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Real Service Card -->
+                        <div class="glass-card p-8 rounded-3xl flex flex-col justify-between space-y-6 hover:border-gold transition-all duration-300 group">
+                            <div class="space-y-4">
+                                <div class="w-14 h-14 rounded-2xl bg-gold/10 border gold-border flex items-center justify-center text-gold text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-user-check"></i>
+                                </div>
+                                <h3 class="font-serif text-2xl font-bold text-white">${t('real_service_title')}</h3>
+                                <p class="text-zinc-400 text-xs leading-relaxed">${t('real_service_desc')}</p>
+                            </div>
+                            <button onclick="checkAuthAndNavigate('book_real')" class="w-full py-3.5 rounded-2xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider shadow glow-gold-sm hover:opacity-95 transition">
+                                ${t('book_now')} <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+
+                        <!-- Video Service Card -->
+                        <div class="glass-card p-8 rounded-3xl flex flex-col justify-between space-y-6 hover:border-gold transition-all duration-300 group">
+                            <div class="space-y-4">
+                                <div class="w-14 h-14 rounded-2xl bg-gold/10 border gold-border flex items-center justify-center text-gold text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-video"></i>
+                                </div>
+                                <h3 class="font-serif text-2xl font-bold text-white">${t('video_service_title')}</h3>
+                                <p class="text-zinc-400 text-xs leading-relaxed">${t('video_service_desc')}</p>
+                            </div>
+                            <button onclick="checkAuthAndNavigate('book_video')" class="w-full py-3.5 rounded-2xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider shadow glow-gold-sm hover:opacity-95 transition">
+                                ${t('book_now')} <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+
+                        <!-- Live Show Card -->
+                        <div class="glass-card p-8 rounded-3xl flex flex-col justify-between space-y-6 hover:border-gold transition-all duration-300 group">
+                            <div class="space-y-4">
+                                <div class="w-14 h-14 rounded-2xl bg-gold/10 border gold-border flex items-center justify-center text-gold text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-tower-broadcast"></i>
+                                </div>
+                                <h3 class="font-serif text-2xl font-bold text-white">${t('live_show_title')}</h3>
+                                <p class="text-zinc-400 text-xs leading-relaxed">${t('live_show_desc')}</p>
+                            </div>
+                            <button onclick="checkAuthAndNavigate('book_live')" class="w-full py-3.5 rounded-2xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider shadow glow-gold-sm hover:opacity-95 transition">
+                                ${t('book_now')} <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkAuthAndNavigate(view) {
+            if (!currentUser) {
+                showToast("Please login or register to book services.", "error");
+                navigate('login');
+            } else if (currentUser.banned) {
+                showToast("Your account has been banned. Please contact helpline.", "error");
+            } else {
+                navigate(view);
+            }
+        }
+
+        // AUTHENTICATION VIEWS
+        function renderLoginView() {
+            return `
+                <div class="max-w-md mx-auto my-12 glass-card p-8 rounded-3xl space-y-6 shadow-2xl animate-fade-in border gold-border">
+                    <div class="text-center space-y-2">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl border gold-border">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h2 class="font-serif text-2xl font-bold text-white">${t('login_tab')}</h2>
+                        <p class="text-xs text-zinc-400">Secure Client Access Portal</p>
+                    </div>
+                    <form onsubmit="handleClientLogin(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">Phone Number</label>
+                            <input type="tel" id="login-phone" required placeholder="${t('phone_ph')}" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">4-Digit PIN Password</label>
+                            <input type="password" id="login-pass" maxlength="4" required placeholder="${t('pass_ph')}" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold focus:outline-none">
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider shadow hover:opacity-95 transition">
+                            ${t('login_btn')}
+                        </button>
+                    </form>
+                    <div class="text-center text-xs text-zinc-400 pt-2">
+                        Don't have an account? <button onclick="navigate('register')" class="text-gold font-bold hover:underline">Register Here</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderRegisterView() {
+            return `
+                <div class="max-w-md mx-auto my-12 glass-card p-8 rounded-3xl space-y-6 shadow-2xl animate-fade-in border gold-border">
+                    <div class="text-center space-y-2">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl border gold-border">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+                        <h2 class="font-serif text-2xl font-bold text-white">${t('register_tab')}</h2>
+                        <p class="text-xs text-zinc-400">Join TRCP VIP Network</p>
+                    </div>
+                    <form onsubmit="handleClientRegister(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">Full Name</label>
+                            <input type="text" id="reg-name" required placeholder="${t('name_ph')}" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">Phone Number</label>
+                            <input type="tel" id="reg-phone" required placeholder="${t('phone_ph')}" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">4-Digit PIN Password</label>
+                            <input type="password" id="reg-pass" maxlength="4" required placeholder="${t('pass_ph')}" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold focus:outline-none">
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider shadow hover:opacity-95 transition">
+                            ${t('register_btn')}
+                        </button>
+                    </form>
+                    <div class="text-center text-xs text-zinc-400 pt-2">
+                        Already registered? <button onclick="navigate('login')" class="text-gold font-bold hover:underline">Login Here</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderAdminLoginView() {
+            return `
+                <div class="max-w-md mx-auto my-12 glass-card p-8 rounded-3xl space-y-6 shadow-2xl animate-fade-in border border-red-900/60">
+                    <div class="text-center space-y-2">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-red-950/60 border border-red-600/40 flex items-center justify-center text-red-400 text-xl">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h2 class="font-serif text-2xl font-bold text-white">${t('admin_tab')}</h2>
+                        <p class="text-xs text-zinc-400">Strictly Restricted Admin Access</p>
+                    </div>
+                    <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">Admin Phone Number</label>
+                            <input type="tel" id="admin-phone" required placeholder="01971355287" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-300 mb-1">Admin Password</label>
+                            <input type="password" id="admin-pass" required placeholder="${t('admin_pass_ph')}" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold focus:outline-none">
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold text-xs uppercase tracking-wider shadow hover:opacity-95 transition">
+                            ${t('admin_login_btn')}
+                        </button>
+                    </form>
+                </div>
+            `;
+        }
+
+        // AUTH HANDLERS
+        function handleClientLogin(e) {
+            e.preventDefault();
+            const phone = document.getElementById('login-phone').value.trim();
+            const pass = document.getElementById('login-pass').value.trim();
+            const users = JSON.parse(localStorage.getItem('trcp_users')) || [];
+            const user = users.find(u => u.phone === phone && u.password === pass);
+
+            if (user) {
+                if (user.banned) {
+                    showToast("Your account is banned. Contact helpline.", "error");
+                    return;
+                }
+                currentUser = user;
+                localStorage.setItem('trcp_current_user', JSON.stringify(currentUser));
+                showToast("Logged in successfully!", "success");
+                navigate('home');
+            } else {
+                showToast("Invalid Phone Number or PIN Password.", "error");
+            }
+        }
+
+        function handleClientRegister(e) {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value.trim();
+            const phone = document.getElementById('reg-phone').value.trim();
+            const pass = document.getElementById('reg-pass').value.trim();
+
+            if (pass.length !== 4) {
+                showToast("PIN Password must be exactly 4 digits.", "error");
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('trcp_users')) || [];
+            if (users.some(u => u.phone === phone)) {
+                showToast("Phone number already registered. Please login.", "error");
+                return;
+            }
+
+            const newUser = { name, phone, password: pass, banned: false, createdAt: new Date().toISOString() };
+            users.push(newUser);
+            localStorage.setItem('trcp_users', JSON.stringify(users));
+
+            currentUser = newUser;
+            localStorage.setItem('trcp_current_user', JSON.stringify(currentUser));
+            showToast("Account registered successfully!", "success");
+            navigate('home');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const phone = document.getElementById('admin-phone').value.trim();
+            const pass = document.getElementById('admin-pass').value.trim();
+
+            if (phone === "01971355287" && pass === "181296") {
+                isAdminLoggedIn = true;
+                localStorage.setItem('trcp_admin_logged', 'true');
+                showToast("Admin access granted.", "success");
+                navigate('admin_dashboard');
+            } else {
+                showToast("Invalid admin credentials.", "error");
+            }
+        }
+
+        function clientLogout() {
+            currentUser = null;
+            localStorage.removeItem('trcp_current_user');
+            showToast("Logged out.", "success");
+            navigate('home');
+        }
+
+        function adminLogout() {
+            isAdminLoggedIn = false;
+            localStorage.removeItem('trcp_admin_logged');
+            showToast("Admin logged out.", "success");
+            navigate('home');
+        }
+
+        // --- CLIENT BOOKINGS HISTORY ---
+        function renderClientHistoryView() {
+            const bookings = JSON.parse(localStorage.getItem('trcp_bookings')) || [];
+            const myBookings = bookings.filter(b => b.userPhone === currentUser.phone);
+
+            return `
+                <div class="max-w-4xl mx-auto space-y-6 animate-fade-in">
+                    <div class="flex justify-between items-center border-b border-zinc-800 pb-4">
+                        <div>
+                            <h2 class="font-serif text-3xl font-bold text-white">My Booking Records</h2>
+                            <p class="text-xs text-zinc-400">Client: ${currentUser.name} (${currentUser.phone})</p>
+                        </div>
+                        <button onclick="navigate('home')" class="px-4 py-2 rounded-xl bg-zinc-800 text-zinc-300 text-xs font-semibold hover:bg-zinc-700">
+                            ${t('back_home')}
+                        </button>
+                    </div>
+
+                    ${myBookings.length === 0 ? `
+                        <div class="glass-card p-12 rounded-3xl text-center space-y-4">
+                            <div class="text-4xl text-zinc-600"><i class="fa-solid fa-folder-open"></i></div>
+                            <p class="text-zinc-400 text-xs">No active or past bookings recorded.</p>
+                            <button onclick="navigate('home')" class="px-4 py-2 rounded-xl gold-gradient-bg text-obsidian text-xs font-bold uppercase">
+                                Book Now
+                            </button>
+                        </div>
+                    ` : `
+                        <div class="space-y-4">
+                            ${myBookings.map(b => `
+                                <div class="glass-card p-6 rounded-2xl border border-zinc-800 space-y-3">
+                                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-2 sm:space-y-0">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${b.status === 'approved' ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : b.status === 'rejected' ? 'bg-red-950 text-red-400 border border-red-800' : 'bg-amber-950 text-amber-400 border border-amber-800'}">
+                                                ${b.status}
+                                            </span>
+                                            <span class="text-xs text-zinc-400">${new Date(b.createdAt).toLocaleString()}</span>
+                                        </div>
+                                        <div class="text-sm font-bold text-gold">Rate: ${b.totalRate} BDT | Advance: ${b.advanceAmount} BDT</div>
+                                    </div>
+                                    <div class="text-sm font-bold text-white">${b.serviceType}</div>
+                                    <div class="text-xs text-zinc-300 bg-obsidian p-3 rounded-xl border border-zinc-900">${b.detailsSummary}</div>
+                                    <div class="text-[11px] text-zinc-400 flex justify-between items-center">
+                                        <span>Payment Method: <strong class="text-zinc-200">${b.paymentMethod} (${b.paymentDetail})</strong></span>
+                                        <span class="text-zinc-500">ID: ${b.id}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `}
+                </div>
+            `;
+        }
+
+        // --- REAL SERVICE BOOKING FLOW ENGINE ---
+        let realBooking = {
+            mainArea: '',
+            subArea: '',
+            date: '',
+            profile: null,
+            duration: '',
+            totalRate: 0,
+            advanceAmount: 0,
+            gateway: 'bKash',
+            paymentMethodType: 'send_money',
+            proofData: ''
+        };
+
+        function renderBookRealView() {
+            const locations = JSON.parse(localStorage.getItem('trcp_locations')) || {};
+            const mainAreas = Object.keys(locations);
+
+            // 10-day rolling window dates
+            let dates = [];
+            for (let i = 0; i < 10; i++) {
+                let d = new Date();
+                d.setDate(d.getDate() + i);
+                dates.push(d.toISOString().split('T')[0]);
+            }
+
+            return `
+                <div class="max-w-4xl mx-auto space-y-6 animate-fade-in">
+                    <div class="flex justify-between items-center border-b border-zinc-800 pb-4">
+                        <div>
+                            <h2 class="font-serif text-3xl font-bold text-white">Real Service VIP Wizard</h2>
+                            <p class="text-xs text-zinc-400">Verified Location-Based Scheduling</p>
+                        </div>
+                        <button onclick="navigate('home')" class="px-4 py-2 rounded-xl bg-zinc-800 text-zinc-300 text-xs font-semibold hover:bg-zinc-700">
+                            ${t('back_home')}
+                        </button>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl space-y-8 border gold-border">
+                        <!-- Step 1: Main Area & Sub-Area -->
+                        <div class="space-y-4">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-gold flex items-center space-x-2">
+                                <span class="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center text-gold">1</span>
+                                <span>Step 1: Select Main Area & Sub-Area</span>
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-zinc-400 mb-1">Main Area</label>
+                                    <select onchange="onRealMainAreaChange(this.value)" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold">
+                                        <option value="">-- Select Main Area --</option>
+                                        ${mainAreas.map(ma => `<option value="${ma}" ${realBooking.mainArea === ma ? 'selected' : ''}>${ma}</option>`).join('')}
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-zinc-400 mb-1">Sub-Area & Place Type</label>
+                                    <select onchange="onRealSubAreaChange(this.value)" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs focus:border-gold">
+                                        <option value="">-- Select Sub-Area --</option>
+                                        ${getRealSubAreaOptions()}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Date Selection -->
+                        <div class="space-y-4">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-gold flex items-center space-x-2">
+                                <span class="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center text-gold">2</span>
+                                <span>Step 2: Select Date (10-Day Window)</span>
+                            </h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                                ${dates.map(date => `
+                                    <button type="button" onclick="setRealDate('${date}')" class="p-3 rounded-xl border text-center transition ${realBooking.date === date ? 'gold-gradient-bg text-obsidian font-bold border-gold glow-gold-sm' : 'bg-obsidian border-zinc-800 text-zinc-300 hover:border-gold/50'}">
+                                        <div class="text-xs">${date}</div>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Available Profiles Filtered Strictly by Date and Sub-Area -->
+                        <div class="space-y-4">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-gold flex items-center space-x-2">
+                                <span class="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center text-gold">3</span>
+                                <span>Step 3: Browse Collection Profiles</span>
+                            </h3>
+                            ${!realBooking.mainArea || !realBooking.subArea || !realBooking.date ? `
+                                <div class="p-4 rounded-xl bg-obsidian text-zinc-500 text-xs text-center border border-zinc-900">
+                                    Please select Main Area, Sub-Area, and Date to view profiles.
+                                </div>
+                            ` : `
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    ${getFilteredProfilesForReal().length === 0 ? `
+                                        <div class="col-span-3 p-6 text-xs text-zinc-500 text-center bg-obsidian rounded-2xl border border-zinc-900">
+                                            No profiles scheduled for ${realBooking.subArea} on ${realBooking.date}.
+                                        </div>
+                                    ` : getFilteredProfilesForReal().map(p => `
+                                        <div class="glass-card p-4 rounded-2xl border ${realBooking.profile && realBooking.profile.id === p.id ? 'border-gold glow-gold-sm bg-obsidianLight' : 'border-zinc-800 hover:border-gold/40'} space-y-3">
+                                            <div class="aspect-[3/4] rounded-xl overflow-hidden bg-obsidian relative cursor-pointer" onclick="openProfileGalleryModal(${p.id})">
+                                                <img src="${p.photos[0] || 'https://placehold.co/600x800/141419/D4AF37?text=Profile'}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                                                <span class="absolute bottom-2 right-2 px-2 py-1 bg-black/70 backdrop-blur text-[10px] font-bold text-gold rounded-md">
+                                                    <i class="fa-solid fa-images mr-1"></i> Gallery
+                                                </span>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <div>
+                                                    <div class="font-bold text-white text-sm">${p.name} (#${p.code})</div>
+                                                    <div class="text-[11px] text-gold">${p.category}</div>
+                                                </div>
+                                                <button onclick="selectRealProfile(${p.id})" class="px-3 py-1.5 rounded-xl text-xs font-bold ${realBooking.profile && realBooking.profile.id === p.id ? 'gold-gradient-bg text-obsidian' : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'}">
+                                                    ${realBooking.profile && realBooking.profile.id === p.id ? 'Selected' : 'Select'}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            `}
+                        </div>
+
+                        <!-- Step 4: Duration Selection -->
+                        ${realBooking.profile ? `
+                            <div class="space-y-4 animate-fade-in border-t border-zinc-800 pt-6">
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-gold flex items-center space-x-2">
+                                    <span class="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center text-gold">4</span>
+                                    <span>Step 4: Choose Duration</span>
+                                </h3>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                    ${['1 Hour', '2 Hours', '3 Hours', 'Night'].map(dur => `
+                                        <button type="button" onclick="setRealDuration('${dur}')" class="p-3.5 rounded-xl border text-center transition ${realBooking.duration === dur ? 'gold-gradient-bg text-obsidian font-bold border-gold' : 'bg-obsidian border-zinc-800 text-zinc-300 hover:border-gold/50'}">
+                                            <div class="text-xs">${dur}</div>
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        <!-- Step 5: Rate Calculation & Settlement -->
+                        ${realBooking.duration ? `
+                            <div class="space-y-6 animate-fade-in border-t border-zinc-800 pt-6">
+                                <div class="p-5 rounded-2xl bg-obsidian border border-gold/40 space-y-2">
+                                    <div class="flex justify-between text-sm font-bold text-white">
+                                        <span>Total Rate:</span>
+                                        <span class="gold-gradient-text">${realBooking.totalRate} BDT</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs text-zinc-300">
+                                        <span>Advance Required:</span>
+                                        <span class="font-bold text-emerald-400">${realBooking.advanceAmount} BDT</span>
+                                    </div>
+                                    <div class="flex justify-between text-xs text-zinc-300">
+                                        <span>Remaining Balance (Hand Cash):</span>
+                                        <span>${realBooking.totalRate - realBooking.advanceAmount} BDT</span>
+                                    </div>
+                                    <p class="text-[10px] text-zinc-400 pt-2 border-t border-zinc-800/80">${t('advance_notice')}</p>
+                                </div>
+
+                                <!-- Payment Gateways -->
+                                <div class="space-y-4">
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-gold">${t('gateway_title')}</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        ${renderGatewayCards()}
+                                    </div>
+                                    <p class="text-xs text-center text-amber-400"><i class="fa-solid fa-triangle-exclamation mr-1"></i> ${t('send_money_notice')}</p>
+
+                                    <!-- Payment Input Method -->
+                                    <div class="space-y-3 bg-obsidian p-4 rounded-2xl border border-zinc-900">
+                                        <label class="block text-xs font-semibold text-zinc-300">${t('pay_method_label')}</label>
+                                        <div class="flex space-x-6">
+                                            <label class="flex items-center space-x-2 cursor-pointer text-xs text-zinc-300">
+                                                <input type="radio" name="real_pay_type" value="send_money" ${realBooking.paymentMethodType === 'send_money' ? 'checked' : ''} onchange="setRealPaymentType('send_money')" class="accent-gold">
+                                                <span>${t('send_money_opt')}</span>
+                                            </label>
+                                            <label class="flex items-center space-x-2 cursor-pointer text-xs text-zinc-300">
+                                                <input type="radio" name="real_pay_type" value="cash_in" ${realBooking.paymentMethodType === 'cash_in' ? 'checked' : ''} onchange="setRealPaymentType('cash_in')" class="accent-gold">
+                                                <span>${t('cash_in_opt')}</span>
+                                            </label>
+                                        </div>
+
+                                        ${realBooking.paymentMethodType === 'send_money' ? `
+                                            <div>
+                                                <label class="block text-xs text-zinc-400 mb-1">${t('screenshot_label')}</label>
+                                                <input type="file" id="real-proof-file" accept="image/*" class="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs file:mr-4 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-gold file:text-obsidian hover:file:opacity-90">
+                                            </div>
+                                        ` : `
+                                            <div>
+                                                <label class="block text-xs text-zinc-400 mb-1">${t('last4_label')}</label>
+                                                <input type="text" id="real-last4" maxlength="4" placeholder="e.g. 5287" class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:border-gold">
+                                            </div>
+                                        `}
+                                    </div>
+
+                                    <button onclick="submitRealBooking()" class="w-full py-4 rounded-2xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider shadow-2xl glow-gold hover:opacity-95 transition">
+                                        ${t('submit_booking')}
+                                    </button>
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function onRealMainAreaChange(val) {
+            realBooking.mainArea = val;
+            realBooking.subArea = '';
+            realBooking.profile = null;
+            renderCurrentView();
+        }
+
+        function getRealSubAreaOptions() {
+            const locations = JSON.parse(localStorage.getItem('trcp_locations')) || {};
+            if (!realBooking.mainArea || !locations[realBooking.mainArea]) return '';
+            let html = '';
+            locations[realBooking.mainArea].forEach(city => {
+                city.subAreas.forEach(sa => {
+                    html += `<option value="${sa.name}" ${realBooking.subArea === sa.name ? 'selected' : ''}>${city.name} -> ${sa.name} (${sa.type})</option>`;
+                });
+            });
+            return html;
+        }
+
+        function onRealSubAreaChange(val) {
+            realBooking.subArea = val;
+            realBooking.profile = null;
+            renderCurrentView();
+        }
+
+        function setRealDate(date) {
+            realBooking.date = date;
+            realBooking.profile = null;
+            renderCurrentView();
+        }
+
+        function getFilteredProfilesForReal() {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            const matrix = JSON.parse(localStorage.getItem('trcp_matrix')) || {};
+            const key = `${realBooking.date}_${realBooking.subArea}`;
+            const allowedCodes = matrix[key] || [];
+
+            // Filter profiles that are available and assigned in matrix for this subarea/date
+            return profiles.filter(p => p.status === 'available' && allowedCodes.includes(p.code));
+        }
+
+        function selectRealProfile(id) {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            realBooking.profile = profiles.find(p => p.id === id);
+            renderCurrentView();
+        }
+
+        function setRealDuration(dur) {
+            realBooking.duration = dur;
+            const cat = realBooking.profile.category;
+            const rates = {
+                "Medium": { "1 Hour": 2000, "2 Hours": 3200, "3 Hours": 4500, "Night": 6000 },
+                "Premium": { "1 Hour": 3000, "2 Hours": 4200, "3 Hours": 5500, "Night": 8000 },
+                "New Special": { "1 Hour": 2500, "2 Hours": 3800, "3 Hours": 5000, "Night": 7000 }
+            };
+
+            const catMap = rates[cat] || rates["Medium"];
+            const total = realBooking.profile.customRate || catMap[dur] || 2000;
+            realBooking.totalRate = total;
+
+            if (total === 2000) {
+                realBooking.advanceAmount = 1000; // 50%
+            } else if (total > 2000) {
+                realBooking.advanceAmount = 1230; // Fixed
+            } else {
+                realBooking.advanceAmount = total * 0.5;
+            }
+            renderCurrentView();
+        }
+
+        function setRealPaymentType(type) {
+            realBooking.paymentMethodType = type;
+            renderCurrentView();
+        }
+
+        function renderGatewayCards() {
+            const gateways = JSON.parse(localStorage.getItem('trcp_gateways')) || DEFAULT_GATEWAYS;
+            return `
+                <div class="p-4 rounded-2xl bg-obsidian border border-zinc-800 flex flex-col justify-between space-y-2">
+                    <div class="font-bold text-pink-500 text-xs">bKash</div>
+                    <div class="text-xs font-mono text-white">${gateways.bkash}</div>
+                    <button onclick="copyToClipboard('${gateways.bkash}')" class="px-2.5 py-1 rounded-lg bg-pink-950/60 text-pink-300 text-[10px] font-bold hover:bg-pink-900">${t('copy_btn')}</button>
+                </div>
+                <div class="p-4 rounded-2xl bg-obsidian border border-zinc-800 flex flex-col justify-between space-y-2">
+                    <div class="font-bold text-orange-500 text-xs">Nagad</div>
+                    <div class="text-xs font-mono text-white">${gateways.nagad}</div>
+                    <button onclick="copyToClipboard('${gateways.nagad}')" class="px-2.5 py-1 rounded-lg bg-orange-950/60 text-orange-300 text-[10px] font-bold hover:bg-orange-900">${t('copy_btn')}</button>
+                </div>
+                <div class="p-4 rounded-2xl bg-obsidian border border-zinc-800 flex flex-col justify-between space-y-2">
+                    <div class="font-bold text-purple-500 text-xs">Rocket</div>
+                    <div class="text-xs font-mono text-white">${gateways.rocket}</div>
+                    <button onclick="copyToClipboard('${gateways.rocket}')" class="px-2.5 py-1 rounded-lg bg-purple-950/60 text-purple-300 text-[10px] font-bold hover:bg-purple-900">${t('copy_btn')}</button>
+                </div>
+            `;
+        }
+
+        function copyToClipboard(text) {
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            showToast("Copied to clipboard!", "success");
+        }
+
+        function submitRealBooking() {
+            let detail = '';
+            if (realBooking.paymentMethodType === 'send_money') {
+                const fileInput = document.getElementById('real-proof-file');
+                if (!fileInput || fileInput.files.length === 0) {
+                    showToast("Please upload payment screenshot.", "error");
+                    return;
+                }
+                detail = "Screenshot: " + fileInput.files[0].name;
+            } else {
+                const last4 = document.getElementById('real-last4').value.trim();
+                if (last4.length !== 4) {
+                    showToast("Please enter valid last 4 digits.", "error");
+                    return;
+                }
+                detail = "Last 4 Digits: " + last4;
+            }
+
+            const bookings = JSON.parse(localStorage.getItem('trcp_bookings')) || [];
+            const newBooking = {
+                id: 'BK-RL-' + Date.now(),
+                userPhone: currentUser.phone,
+                userName: currentUser.name,
+                serviceType: 'Real Service',
+                detailsSummary: `${realBooking.mainArea} / ${realBooking.subArea} (${realBooking.date}) - Profile: ${realBooking.profile.name} (#${realBooking.profile.code}) - ${realBooking.duration}`,
+                details: { ...realBooking },
+                totalRate: realBooking.totalRate,
+                advanceAmount: realBooking.advanceAmount,
+                paymentMethod: realBooking.gateway,
+                paymentDetail: detail,
+                status: 'pending',
+                createdAt: new Date().toISOString()
+            };
+
+            bookings.push(newBooking);
+            localStorage.setItem('trcp_bookings', JSON.stringify(bookings));
+
+            showToast(t('booking_success'), "success");
+            navigate('client_history');
+        }
+
+        // --- VIDEO SERVICE BOOKING FLOW ---
+        let videoBooking = {
+            category: 'Medium',
+            duration: '10 Mins',
+            profile: null,
+            totalRate: 750
+        };
+
+        function renderBookVideoView() {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+
+            // STRICT FILTERING BY SELECTED CATEGORY
+            const filteredProfiles = profiles.filter(p => {
+                const pCat = (p.category || '').toLowerCase();
+                const selCat = (videoBooking.category || '').toLowerCase();
+                if (selCat === 'new collection') {
+                    return pCat === 'new collection' || pCat === 'new special' || pCat === 'special';
+                }
+                return pCat === selCat;
+            });
+
+            return `
+                <div class="max-w-4xl mx-auto space-y-6 animate-fade-in">
+                    <div class="flex justify-between items-center border-b border-zinc-800 pb-4">
+                        <div>
+                            <h2 class="font-serif text-3xl font-bold text-white">Video Service Streaming</h2>
+                            <p class="text-xs text-zinc-400">100% Online Payment Private Streams</p>
+                        </div>
+                        <button onclick="navigate('home')" class="px-4 py-2 rounded-xl bg-zinc-800 text-zinc-300 text-xs font-semibold hover:bg-zinc-700">
+                            ${t('back_home')}
+                        </button>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl space-y-8 border gold-border">
+                        <!-- Category Filter -->
+                        <div class="space-y-3">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gold">Category</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                ${['Medium', 'Premium', 'New Collection'].map(cat => `
+                                    <button type="button" onclick="setVideoCat('${cat}')" class="p-3 rounded-xl border text-center transition ${videoBooking.category === cat ? 'gold-gradient-bg text-obsidian font-bold border-gold' : 'bg-obsidian border-zinc-800 text-zinc-300'}">
+                                        <div class="text-xs">${cat}</div>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Duration Filter -->
+                        <div class="space-y-3">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gold">Duration</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                ${['10 Mins', '20 Mins', '30 Mins', '60 Mins'].map(dur => `
+                                    <button type="button" onclick="setVideoDur('${dur}')" class="p-3 rounded-xl border text-center transition ${videoBooking.duration === dur ? 'gold-gradient-bg text-obsidian font-bold border-gold' : 'bg-obsidian border-zinc-800 text-zinc-300'}">
+                                        <div class="text-xs">${dur}</div>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Profile Selection -->
+                        <div class="space-y-3">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gold">Available Today (${videoBooking.category})</label>
+                            ${filteredProfiles.length === 0 ? `
+                                <div class="p-6 text-center text-xs text-zinc-500 bg-obsidian rounded-2xl border border-zinc-900">
+                                    No profiles available under category: <span class="text-gold font-bold">${videoBooking.category}</span>
+                                </div>
+                            ` : `
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    ${filteredProfiles.map(p => `
+                                        <div onclick="selectVideoProfile(${p.id})" class="glass-card p-4 rounded-2xl cursor-pointer border ${videoBooking.profile && videoBooking.profile.id === p.id ? 'border-gold glow-gold-sm bg-obsidianLight' : 'border-zinc-800'} space-y-3">
+                                            <div class="aspect-[3/4] rounded-xl overflow-hidden bg-obsidian">
+                                                <img src="${p.photos[0] || 'https://placehold.co/600x800/141419/D4AF37?text=Profile'}" class="w-full h-full object-cover">
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <div>
+                                                    <div class="font-bold text-white text-sm">${p.name} (#${p.code})</div>
+                                                    <div class="text-[11px] text-gold">${p.category}</div>
+                                                </div>
+                                                <span class="text-xs px-2 py-1 rounded ${videoBooking.profile && videoBooking.profile.id === p.id ? 'bg-gold text-obsidian font-bold' : 'bg-zinc-800 text-zinc-400'}">
+                                                    ${videoBooking.profile && videoBooking.profile.id === p.id ? 'Selected' : 'Select'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            `}
+                        </div>
+
+                        ${videoBooking.profile ? `
+                            <div class="space-y-6 border-t border-zinc-800 pt-6 animate-fade-in">
+                                <div class="p-5 rounded-2xl bg-obsidian border border-gold/40 flex justify-between items-center">
+                                    <span class="text-xs text-zinc-300">100% Online Payment Amount:</span>
+                                    <span class="font-serif text-2xl font-bold gold-gradient-text">${videoBooking.totalRate} BDT</span>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <h4 class="text-xs font-bold uppercase tracking-wider text-gold">${t('gateway_title')}</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        ${renderGatewayCards()}
+                                    </div>
+                                    <div class="space-y-2 bg-obsidian p-4 rounded-2xl border border-zinc-900">
+                                        <label class="block text-xs text-zinc-400">Payment Screenshot</label>
+                                        <input type="file" id="vid-proof" accept="image/*" class="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs">
+                                    </div>
+                                    <button onclick="submitVideoBooking()" class="w-full py-4 rounded-2xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider shadow-2xl glow-gold hover:opacity-95 transition">
+                                        ${t('submit_booking')}
+                                    </button>
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function setVideoCat(cat) {
+            videoBooking.category = cat;
+            videoBooking.profile = null;
+            calcVidRate();
+            renderCurrentView();
+        }
+
+        function setVideoDur(dur) {
+            videoBooking.duration = dur;
+            calcVidRate();
+            renderCurrentView();
+        }
+
+        function calcVidRate() {
+            const rates = {
+                "Medium": { "10 Mins": 750, "20 Mins": 1020, "30 Mins": 1530, "60 Mins": 2040 },
+                "Premium": { "10 Mins": 915, "20 Mins": 1230, "30 Mins": 1750, "60 Mins": 2550 },
+                "New Collection": { "10 Mins": 850, "20 Mins": 1125, "30 Mins": 1630, "60 Mins": 2250 }
+            };
+            const catMap = rates[videoBooking.category] || rates["Medium"];
+            videoBooking.totalRate = catMap[videoBooking.duration] || 750;
+        }
+
+        function selectVideoProfile(id) {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            videoBooking.profile = profiles.find(p => p.id === id);
+            renderCurrentView();
+        }
+
+        function submitVideoBooking() {
+            const fileInput = document.getElementById('vid-proof');
+            const detail = fileInput && fileInput.files.length > 0 ? "Screenshot: " + fileInput.files[0].name : "Online Paid";
+
+            const bookings = JSON.parse(localStorage.getItem('trcp_bookings')) || [];
+            const newBooking = {
+                id: 'BK-VD-' + Date.now(),
+                userPhone: currentUser.phone,
+                userName: currentUser.name,
+                serviceType: 'Video Service',
+                detailsSummary: `${videoBooking.category} - ${videoBooking.duration} with ${videoBooking.profile.name} (#${videoBooking.profile.code})`,
+                details: { ...videoBooking },
+                totalRate: videoBooking.totalRate,
+                advanceAmount: videoBooking.totalRate,
+                paymentMethod: 'Online Gateway',
+                paymentDetail: detail,
+                status: 'pending',
+                createdAt: new Date().toISOString()
+            };
+
+            bookings.push(newBooking);
+            localStorage.setItem('trcp_bookings', JSON.stringify(bookings));
+
+            showToast(t('booking_success'), "success");
+            navigate('client_history');
+        }
+
+        // --- LIVE SHOW BOOKING FLOW ---
+        let liveBooking = { package: '10-Day', rate: 550 };
+
+        function renderBookLiveView() {
+            return `
+                <div class="max-w-4xl mx-auto space-y-6 animate-fade-in">
+                    <div class="flex justify-between items-center border-b border-zinc-800 pb-4">
+                        <div>
+                            <h2 class="font-serif text-3xl font-bold text-white">Live Show Packages</h2>
+                            <p class="text-xs text-zinc-400">100% Online Payment Access</p>
+                        </div>
+                        <button onclick="navigate('home')" class="px-4 py-2 rounded-xl bg-zinc-800 text-zinc-300 text-xs font-semibold hover:bg-zinc-700">
+                            ${t('back_home')}
+                        </button>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl space-y-8 border gold-border">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div onclick="selectLivePkg('10-Day', 550)" class="glass-card p-6 rounded-2xl cursor-pointer border ${liveBooking.package === '10-Day' ? 'border-gold glow-gold-sm bg-obsidianLight' : 'border-zinc-800'} space-y-3">
+                                <h3 class="font-serif text-xl font-bold text-white">10-Day Access</h3>
+                                <div class="text-2xl font-bold gold-gradient-text">550 BDT</div>
+                                <p class="text-xs text-zinc-400">Full streaming privileges for 10 days.</p>
+                            </div>
+                            <div onclick="selectLivePkg('1-Month', 1020)" class="glass-card p-6 rounded-2xl cursor-pointer border ${liveBooking.package === '1-Month' ? 'border-gold glow-gold-sm bg-obsidianLight' : 'border-zinc-800'} space-y-3">
+                                <h3 class="font-serif text-xl font-bold text-white">1-Month Access</h3>
+                                <div class="text-2xl font-bold gold-gradient-text">1020 BDT</div>
+                                <p class="text-xs text-zinc-400">Complete 30-day VIP broadcasting access.</p>
+                            </div>
+                            <div onclick="selectLivePkg('3-Month', 1850)" class="glass-card p-6 rounded-2xl cursor-pointer border ${liveBooking.package === '3-Month' ? 'border-gold glow-gold-sm bg-obsidianLight' : 'border-zinc-800'} space-y-3">
+                                <h3 class="font-serif text-xl font-bold text-white">3-Month Access</h3>
+                                <div class="text-2xl font-bold gold-gradient-text">1850 BDT</div>
+                                <p class="text-xs text-zinc-400">Quarterly unlimited VIP show pass.</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6 border-t border-zinc-800 pt-6">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-gold">${t('gateway_title')}</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                ${renderGatewayCards()}
+                            </div>
+                            <div class="space-y-2 bg-obsidian p-4 rounded-2xl border border-zinc-900">
+                                <label class="block text-xs text-zinc-400">Upload Payment Screenshot</label>
+                                <input type="file" id="live-proof" accept="image/*" class="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs">
+                            </div>
+                            <button onclick="submitLiveBooking()" class="w-full py-4 rounded-2xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider shadow-2xl glow-gold hover:opacity-95 transition">
+                                ${t('submit_booking')}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectLivePkg(pkg, rate) {
+            liveBooking.package = pkg;
+            liveBooking.rate = rate;
+            renderCurrentView();
+        }
+
+        function submitLiveBooking() {
+            const fileInput = document.getElementById('live-proof');
+            const detail = fileInput && fileInput.files.length > 0 ? "Screenshot: " + fileInput.files[0].name : "Online Paid";
+
+            const bookings = JSON.parse(localStorage.getItem('trcp_bookings')) || [];
+            const newBooking = {
+                id: 'BK-LV-' + Date.now(),
+                userPhone: currentUser.phone,
+                userName: currentUser.name,
+                serviceType: 'Live Show Package',
+                detailsSummary: `${liveBooking.package} Live VIP Access Pass`,
+                details: { ...liveBooking },
+                totalRate: liveBooking.rate,
+                advanceAmount: liveBooking.rate,
+                paymentMethod: 'Online Gateway',
+                paymentDetail: detail,
+                status: 'pending',
+                createdAt: new Date().toISOString()
+            };
+
+            bookings.push(newBooking);
+            localStorage.setItem('trcp_bookings', JSON.stringify(bookings));
+
+            showToast(t('booking_success'), "success");
+            navigate('client_history');
+        }
+
+        // --- ADMIN DASHBOARD SUITE ---
+        let adminTab = 'users';
+
+        function renderAdminDashboardView() {
+            return `
+                <div class="space-y-6 animate-fade-in">
+                    <!-- Admin Header -->
+                    <div class="glass-card p-6 rounded-3xl border border-red-900/60 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-2xl bg-red-950 border border-red-700 flex items-center justify-center text-red-400 text-xl font-bold">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h2 class="font-serif text-2xl font-bold text-white">TRCP Admin Command Dashboard</h2>
+                                <p class="text-xs text-zinc-400">Master Access Control & Network Manager</p>
+                            </div>
+                        </div>
+                        <button onclick="adminLogout()" class="px-4 py-2 rounded-xl bg-red-950/80 border border-red-800 text-red-300 text-xs font-bold hover:bg-red-900 transition">
+                            <i class="fa-solid fa-power-off mr-1"></i> Exit Admin
+                        </button>
+                    </div>
+
+                    <!-- Navigation Tabs -->
+                    <div class="flex flex-wrap gap-2 border-b border-zinc-800 pb-3">
+                        <button onclick="setAdminTab('users')" class="px-4 py-2 rounded-xl text-xs font-bold transition ${adminTab === 'users' ? 'gold-gradient-bg text-obsidian shadow' : 'bg-obsidianLight text-zinc-300 hover:bg-zinc-800'}">
+                            <i class="fa-solid fa-users mr-1"></i> ${t('admin_users')}
+                        </button>
+                        <button onclick="setAdminTab('profiles')" class="px-4 py-2 rounded-xl text-xs font-bold transition ${adminTab === 'profiles' ? 'gold-gradient-bg text-obsidian shadow' : 'bg-obsidianLight text-zinc-300 hover:bg-zinc-800'}">
+                            <i class="fa-solid fa-address-card mr-1"></i> ${t('admin_profiles')}
+                        </button>
+                        <button onclick="setAdminTab('matrix')" class="px-4 py-2 rounded-xl text-xs font-bold transition ${adminTab === 'matrix' ? 'gold-gradient-bg text-obsidian shadow' : 'bg-obsidianLight text-zinc-300 hover:bg-zinc-800'}">
+                            <i class="fa-solid fa-calendar-days mr-1"></i> ${t('admin_matrix')}
+                        </button>
+                        <button onclick="setAdminTab('bookings')" class="px-4 py-2 rounded-xl text-xs font-bold transition ${adminTab === 'bookings' ? 'gold-gradient-bg text-obsidian shadow' : 'bg-obsidianLight text-zinc-300 hover:bg-zinc-800'}">
+                            <i class="fa-solid fa-file-invoice-dollar mr-1"></i> ${t('admin_bookings')}
+                        </button>
+                        <button onclick="setAdminTab('gateways')" class="px-4 py-2 rounded-xl text-xs font-bold transition ${adminTab === 'gateways' ? 'gold-gradient-bg text-obsidian shadow' : 'bg-obsidianLight text-zinc-300 hover:bg-zinc-800'}">
+                            <i class="fa-solid fa-wallet mr-1"></i> ${t('admin_gateways')}
+                        </button>
+                    </div>
+
+                    <!-- Tab View Renderer -->
+                    <div>
+                        ${renderAdminTabContent()}
+                    </div>
+                </div>
+            `;
+        }
+
+        function setAdminTab(tab) {
+            adminTab = tab;
+            renderCurrentView();
+        }
+
+        function renderAdminTabContent() {
+            if (adminTab === 'users') {
+                const users = JSON.parse(localStorage.getItem('trcp_users')) || [];
+                return `
+                    <div class="glass-card p-6 rounded-3xl space-y-4 border gold-border">
+                        <h3 class="font-serif text-xl font-bold text-white">Registered Clients & PIN Recovery</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs">
+                                <thead class="border-b border-zinc-800 text-zinc-400">
+                                    <tr>
+                                        <th class="py-3 px-4">Client Name</th>
+                                        <th class="py-3 px-4">Phone Number</th>
+                                        <th class="py-3 px-4">4-Digit PIN</th>
+                                        <th class="py-3 px-4">Status</th>
+                                        <th class="py-3 px-4">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-zinc-800/60">
+                                    ${users.length === 0 ? `<tr><td colspan="5" class="py-4 text-center text-zinc-500">No registered clients yet.</td></tr>` : users.map(u => `
+                                        <tr>
+                                            <td class="py-3 px-4 font-bold text-white">${u.name}</td>
+                                            <td class="py-3 px-4 text-zinc-300">${u.phone}</td>
+                                            <td class="py-3 px-4 font-mono text-gold font-bold">${u.password}</td>
+                                            <td class="py-3 px-4">
+                                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${u.banned ? 'bg-red-950 text-red-400 border border-red-800' : 'bg-emerald-950 text-emerald-400 border border-emerald-800'}">
+                                                    ${u.banned ? 'Banned' : 'Active'}
+                                                </span>
+                                            </td>
+                                            <td class="py-3 px-4">
+                                                <button onclick="toggleUserBan('${u.phone}')" class="px-3 py-1 rounded-lg text-xs font-bold ${u.banned ? 'bg-emerald-950 text-emerald-300' : 'bg-red-950 text-red-300'}">
+                                                    ${u.banned ? t('unban') : t('ban')}
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            } else if (adminTab === 'profiles') {
+                const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+                return `
+                    <div class="glass-card p-6 rounded-3xl space-y-6 border gold-border">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold text-white">Collection Profiles (${profiles.length}/500)</h3>
+                            <button onclick="openProfileModal(null)" class="px-4 py-2 rounded-xl gold-gradient-bg text-obsidian text-xs font-bold shadow glow-gold-sm">
+                                <i class="fa-solid fa-plus mr-1"></i> ${t('add_profile')}
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            ${profiles.map(p => `
+                                <div class="glass-card p-4 rounded-2xl border border-zinc-800 space-y-3">
+                                    <div class="aspect-[3/4] rounded-xl overflow-hidden bg-obsidian relative">
+                                        <img src="${p.photos[0] || 'https://placehold.co/600x800/141419/D4AF37?text=Profile'}" class="w-full h-full object-cover">
+                                        <span class="absolute top-2 right-2 px-2 py-1 rounded-full text-[10px] font-bold ${p.status === 'available' ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-zinc-800 text-zinc-400'}">
+                                            ${p.status}
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-white text-sm">${p.name} (#${p.code})</div>
+                                        <div class="text-xs text-gold">${p.category}</div>
+                                    </div>
+                                    <div class="flex space-x-2 pt-2 border-t border-zinc-800">
+                                        <button onclick="openProfileModal(${p.id})" class="flex-1 py-1.5 rounded-lg bg-zinc-800 text-zinc-300 text-xs font-bold hover:bg-zinc-700">${t('edit')}</button>
+                                        <button onclick="toggleProfileStatus(${p.id})" class="px-3 py-1.5 rounded-lg bg-zinc-800 text-gold text-xs font-bold hover:bg-zinc-700"><i class="fa-solid fa-power-off"></i></button>
+                                        <button onclick="deleteProfile(${p.id})" class="px-3 py-1.5 rounded-lg bg-red-950/60 text-red-300 text-xs font-bold hover:bg-red-900"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else if (adminTab === 'matrix') {
+                const matrix = JSON.parse(localStorage.getItem('trcp_matrix')) || {};
+                const locations = JSON.parse(localStorage.getItem('trcp_locations')) || {};
+                const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+
+                let dates = [];
+                for (let i = 0; i < 10; i++) {
+                    let d = new Date();
+                    d.setDate(d.getDate() + i);
+                    dates.push(d.toISOString().split('T')[0]);
+                }
+
+                let subAreasList = [];
+                Object.keys(locations).forEach(mArea => {
+                    locations[mArea].forEach(city => {
+                        city.subAreas.forEach(sa => subAreasList.push({ mainArea: mArea, city: city.name, name: sa.name }));
+                    });
+                });
+
+                return `
+                    <div class="glass-card p-6 rounded-3xl space-y-6 border gold-border">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-white">10-Day Location & Date Schedule Matrix</h3>
+                                <p class="text-xs text-zinc-400">Rules Enforced: Zero date overlaps across sub-areas + Unique rotation per sub-area over 10 days.</p>
+                            </div>
+                            <button onclick="generateAutoMatrix()" class="px-4 py-2.5 rounded-xl gold-gradient-bg text-obsidian text-xs font-bold shadow glow-gold-sm">
+                                <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Auto-Generate Rotation Matrix
+                            </button>
+                        </div>
+
+                        <div class="overflow-x-auto border border-zinc-800 rounded-2xl bg-obsidian">
+                            <table class="w-full text-left text-xs border-collapse min-w-[800px]">
+                                <thead>
+                                    <tr class="border-b border-zinc-800 bg-obsidianLight text-zinc-400">
+                                        <th class="py-3 px-4 sticky left-0 bg-obsidianLight z-10">Sub-Area Location</th>
+                                        ${dates.map(d => `<th class="py-3 px-3 text-center min-w-[130px] border-l border-zinc-800/60">${d.slice(5)}</th>`).join('')}
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-zinc-800/60">
+                                    ${subAreasList.map(sa => `
+                                        <tr>
+                                            <td class="py-3 px-4 font-bold text-white sticky left-0 bg-obsidian z-10 border-r border-zinc-800">
+                                                <div>${sa.name}</div>
+                                                <div class="text-[10px] text-zinc-500 font-normal">${sa.mainArea} - ${sa.city}</div>
+                                            </td>
+                                            ${dates.map(dateStr => {
+                                                const key = `${dateStr}_${sa.name}`;
+                                                const codes = matrix[key] || [];
+                                                return `
+                                                    <td class="py-2 px-2 border-l border-zinc-800/60 text-center">
+                                                        <div class="space-y-1">
+                                                            <div class="text-[10px] font-mono text-gold font-bold bg-zinc-900 p-1.5 rounded-lg border border-zinc-800 min-h-[30px] flex flex-wrap gap-1 justify-center items-center">
+                                                                ${codes.length > 0 ? codes.map(c => `<span class="px-1.5 py-0.5 rounded bg-zinc-800 text-gold">${c}</span>`).join('') : '<span class="text-zinc-600">None</span>'}
+                                                            </div>
+                                                            <button onclick="editMatrixCell('${dateStr}', '${sa.name}')" class="text-[10px] text-zinc-400 hover:text-white underline">Edit Codes</button>
+                                                        </div>
+                                                    </td>
+                                                `;
+                                            }).join('')}
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            } else if (adminTab === 'bookings') {
+                const bookings = JSON.parse(localStorage.getItem('trcp_bookings')) || [];
+                return `
+                    <div class="glass-card p-6 rounded-3xl space-y-6 border gold-border">
+                        <h3 class="font-serif text-xl font-bold text-white">Submitted Bookings & Payment Review</h3>
+                        <div class="space-y-4">
+                            ${bookings.length === 0 ? `<p class="text-xs text-zinc-500">No bookings submitted yet.</p>` : bookings.map(b => `
+                                <div class="glass-card p-6 rounded-2xl border border-zinc-800 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center space-x-2">
+                                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${b.status === 'approved' ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : b.status === 'rejected' ? 'bg-red-950 text-red-400 border border-red-800' : 'bg-amber-950 text-amber-400 border border-amber-800'}">
+                                                ${b.status}
+                                            </span>
+                                            <span class="text-xs text-zinc-400">${b.id} - ${new Date(b.createdAt).toLocaleString()}</span>
+                                        </div>
+                                        <h4 class="font-bold text-white text-sm">${b.serviceType} (Client: ${b.userName} - ${b.userPhone})</h4>
+                                        <p class="text-xs text-zinc-300">${b.detailsSummary}</p>
+                                        <div class="text-xs text-gold">Total Rate: ${b.totalRate} BDT | Advance: ${b.advanceAmount} BDT (${b.paymentMethod}: ${b.paymentDetail})</div>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        ${b.status === 'pending' ? `
+                                            <button onclick="updateBookingStatus('${b.id}', 'approved')" class="px-3 py-1.5 rounded-xl bg-emerald-950 border border-emerald-800 text-emerald-300 text-xs font-bold hover:bg-emerald-900">${t('approve')}</button>
+                                            <button onclick="updateBookingStatus('${b.id}', 'rejected')" class="px-3 py-1.5 rounded-xl bg-red-950 border border-red-800 text-red-300 text-xs font-bold hover:bg-red-900">${t('reject')}</button>
+                                        ` : `
+                                            <button onclick="purgeBooking('${b.id}')" class="px-3 py-1.5 rounded-xl bg-zinc-800 text-zinc-300 text-xs hover:bg-zinc-700"><i class="fa-solid fa-trash"></i> Purge</button>
+                                        `}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else if (adminTab === 'gateways') {
+                const gateways = JSON.parse(localStorage.getItem('trcp_gateways')) || DEFAULT_GATEWAYS;
+                return `
+                    <div class="glass-card p-6 rounded-3xl space-y-6 max-w-lg border gold-border">
+                        <h3 class="font-serif text-xl font-bold text-white">Dynamic Gateway Management</h3>
+                        <form onsubmit="handleUpdateGateways(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1">bKash Personal / Agent Number</label>
+                                <input type="text" id="gw-bkash" value="${gateways.bkash}" required class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1">Nagad Personal / Agent Number</label>
+                                <input type="text" id="gw-nagad" value="${gateways.nagad}" required class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-zinc-400 mb-1">Rocket Personal / Agent Number</label>
+                                <input type="text" id="gw-rocket" value="${gateways.rocket}" required class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                            </div>
+                            <button type="submit" class="w-full py-3.5 rounded-xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider">
+                                Save Gateway Numbers
+                            </button>
+                        </form>
+                    </div>
+                `;
+            }
+        }
+
+        // ADMIN ACTIONS
+        function toggleUserBan(phone) {
+            const users = JSON.parse(localStorage.getItem('trcp_users')) || [];
+            const user = users.find(u => u.phone === phone);
+            if (user) {
+                user.banned = !user.banned;
+                localStorage.setItem('trcp_users', JSON.stringify(users));
+                showToast("Client account ban status toggled.", "success");
+                renderCurrentView();
+            }
+        }
+
+        function toggleProfileStatus(id) {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            const p = profiles.find(x => x.id === id);
+            if (p) {
+                p.status = p.status === 'available' ? 'unavailable' : 'available';
+                localStorage.setItem('trcp_profiles', JSON.stringify(profiles));
+                renderCurrentView();
+            }
+        }
+
+        function deleteProfile(id) {
+            let profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            profiles = profiles.filter(x => x.id !== id);
+            localStorage.setItem('trcp_profiles', JSON.stringify(profiles));
+            showToast("Profile deleted.", "success");
+            renderCurrentView();
+        }
+
+        function updateBookingStatus(id, status) {
+            let bookings = JSON.parse(localStorage.getItem('trcp_bookings')) || [];
+            if (status === 'rejected') {
+                // Completely purge fake booking from records
+                bookings = bookings.filter(b => b.id !== id);
+            } else {
+                const b = bookings.find(x => x.id === id);
+                if (b) b.status = status;
+            }
+            localStorage.setItem('trcp_bookings', JSON.stringify(bookings));
+            showToast(`Booking ${status}.`, "success");
+            renderCurrentView();
+        }
+
+        function purgeBooking(id) {
+            let bookings = JSON.parse(localStorage.getItem('trcp_bookings')) || [];
+            bookings = bookings.filter(b => b.id !== id);
+            localStorage.setItem('trcp_bookings', JSON.stringify(bookings));
+            showToast("Booking purged.", "success");
+            renderCurrentView();
+        }
+
+        function handleUpdateGateways(e) {
+            e.preventDefault();
+            const gateways = {
+                bkash: document.getElementById('gw-bkash').value.trim(),
+                nagad: document.getElementById('gw-nagad').value.trim(),
+                rocket: document.getElementById('gw-rocket').value.trim()
+            };
+            localStorage.setItem('trcp_gateways', JSON.stringify(gateways));
+            showToast("Gateways updated successfully.", "success");
+        }
+
+        function generateAutoMatrix() {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            const locations = JSON.parse(localStorage.getItem('trcp_locations')) || {};
+            const matrix = {};
+
+            let subAreasList = [];
+            Object.keys(locations).forEach(mArea => {
+                locations[mArea].forEach(city => {
+                    city.subAreas.forEach(sa => subAreasList.push(sa.name));
+                });
+            });
+
+            const mediumProfiles = profiles.filter(p => p.category === 'Medium').map(p => p.code);
+            const premiumProfiles = profiles.filter(p => p.category === 'Premium').map(p => p.code);
+            const specialProfiles = profiles.filter(p => p.category === 'New Special' || p.category === 'Special').map(p => p.code);
+
+            // Matrix generation with multi-location AND multi-date restriction per sub-area
+            for (let dIdx = 0; dIdx < 10; dIdx++) {
+                let d = new Date();
+                d.setDate(d.getDate() + dIdx);
+                let dateStr = d.toISOString().split('T')[0];
+
+                let usedOnDate = new Set();
+
+                subAreasList.forEach((saName, saIdx) => {
+                    const key = `${dateStr}_${saName}`;
+                    let assigned = [];
+
+                    // Pick from medium, premium, special without violating rules
+                    const pickCodes = (pool, count) => {
+                        let poolCopy = [...pool];
+                        let selected = [];
+                        let attempt = 0;
+                        while (selected.length < count && poolCopy.length > 0 && attempt < 50) {
+                            attempt++;
+                            let idx = (dIdx + saIdx + selected.length + attempt) % poolCopy.length;
+                            let candidate = poolCopy[idx];
+
+                            // Rule 1: Cannot be used on same date elsewhere
+                            if (usedOnDate.has(candidate)) {
+                                poolCopy.splice(idx, 1);
+                                continue;
+                            }
+
+                            // Rule 2: Cannot be repeated in same subarea across dates
+                            let repeatedInSubarea = false;
+                            for (let prevD = 0; prevD < dIdx; prevD++) {
+                                let prevDate = new Date();
+                                prevDate.setDate(prevDate.getDate() + prevD);
+                                let prevKey = `${prevDate.toISOString().split('T')[0]}_${saName}`;
+                                if ((matrix[prevKey] || []).includes(candidate)) {
+                                    repeatedInSubarea = true;
+                                    break;
+                                }
+                            }
+
+                            if (!repeatedInSubarea || pool.length < subAreasList.length) {
+                                selected.push(candidate);
+                                usedOnDate.add(candidate);
+                                poolCopy.splice(idx, 1);
+                            }
+                        }
+                        return selected;
+                    };
+
+                    const mPicked = pickCodes(mediumProfiles, 3);
+                    const pPicked = pickCodes(premiumProfiles, 3);
+                    const sPicked = pickCodes(specialProfiles, 2);
+
+                    matrix[key] = [...mPicked, ...pPicked, ...sPicked];
+                });
+            }
+
+            localStorage.setItem('trcp_matrix', JSON.stringify(matrix));
+            showToast("10-Day Rotation Schedule Matrix generated!", "success");
+            renderCurrentView();
+        }
+
+        function editMatrixCell(dateStr, subAreaName) {
+            const matrix = JSON.parse(localStorage.getItem('trcp_matrix')) || {};
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            const key = `${dateStr}_${subAreaName}`;
+            const currentCodes = matrix[key] || [];
+
+            showModal(`
+                <div class="glass-card p-6 rounded-3xl max-w-md w-full space-y-4 border gold-border animate-fade-in">
+                    <div class="flex justify-between items-center border-b border-zinc-800 pb-3">
+                        <div>
+                            <h3 class="font-serif text-lg font-bold text-white">Manage Schedule Matrix</h3>
+                            <p class="text-xs text-zinc-400">${subAreaName} (${dateStr})</p>
+                        </div>
+                        <button onclick="closeModal()" class="text-zinc-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="block text-xs font-semibold text-zinc-300">Select Active Collection Profile Codes:</label>
+                        <div class="max-h-60 overflow-y-auto space-y-2 pr-2">
+                            ${profiles.map(p => `
+                                <label class="flex items-center justify-between p-2.5 rounded-xl bg-obsidian border border-zinc-800 cursor-pointer hover:border-gold/50">
+                                    <div class="flex items-center space-x-3">
+                                        <input type="checkbox" value="${p.code}" ${currentCodes.includes(p.code) ? 'checked' : ''} class="matrix-code-checkbox accent-gold">
+                                        <span class="text-xs font-bold text-white">#${p.code} - ${p.name}</span>
+                                    </div>
+                                    <span class="text-[10px] text-gold">${p.category}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <button onclick="saveMatrixCell('${dateStr}', '${subAreaName}')" class="w-full py-3 rounded-xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider">
+                        Update Matrix Assignment
+                    </button>
+                </div>
+            `);
+        }
+
+        function saveMatrixCell(dateStr, subAreaName) {
+            const matrix = JSON.parse(localStorage.getItem('trcp_matrix')) || {};
+            const checkboxes = document.querySelectorAll('.matrix-code-checkbox:checked');
+            const selectedCodes = Array.from(checkboxes).map(cb => cb.value);
+
+            // Validate Rule 1: Same date overlap check
+            let conflictFound = false;
+            Object.keys(matrix).forEach(key => {
+                if (key.startsWith(dateStr) && !key.endsWith(`_${subAreaName}`)) {
+                    const existingCodes = matrix[key] || [];
+                    selectedCodes.forEach(code => {
+                        if (existingCodes.includes(code)) {
+                            conflictFound = true;
+                        }
+                    });
+                }
+            });
+
+            if (conflictFound) {
+                showToast("Conflict Warning: Code already assigned to another location on this date!", "error");
+                return;
+            }
+
+            matrix[`${dateStr}_${subAreaName}`] = selectedCodes;
+            localStorage.setItem('trcp_matrix', JSON.stringify(matrix));
+            closeModal();
+            showToast("Matrix updated successfully.", "success");
+            renderCurrentView();
+        }
+
+        // --- PROFILE MODAL & GALLERY SLIDER ---
+        function openProfileModal(id) {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            const p = profiles.find(x => x.id === id) || { code: '', name: '', category: 'Medium', customRate: '' };
+
+            showModal(`
+                <div class="glass-card p-8 rounded-3xl max-w-lg w-full space-y-6 border gold-border animate-fade-in">
+                    <div class="flex justify-between items-center border-b border-zinc-800 pb-3">
+                        <h3 class="font-serif text-xl font-bold text-white">${id ? 'Edit Profile' : 'Add Collection Profile'}</h3>
+                        <button onclick="closeModal()" class="text-zinc-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <form onsubmit="handleSaveProfile(event, ${id || 'null'})" class="space-y-4">
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-1">Name</label>
+                            <input type="text" id="prof-name" value="${p.name}" required class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-1">Profile Code Number</label>
+                            <input type="text" id="prof-code" value="${p.code}" required class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-1">Category</label>
+                            <select id="prof-cat" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                                <option value="Medium" ${p.category === 'Medium' ? 'selected' : ''}>Medium</option>
+                                <option value="Premium" ${p.category === 'Premium' ? 'selected' : ''}>Premium</option>
+                                <option value="New Special" ${p.category === 'New Special' ? 'selected' : ''}>New Special</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-1">Photos (Supports >3GB local gallery files)</label>
+                            <input type="file" id="prof-photos" multiple accept="image/*" class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-1">Video Upload (Supports >3GB local gallery files)</label>
+                            <input type="file" id="prof-video" accept="video/*" class="w-full px-4 py-2.5 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-zinc-400 mb-1">Custom Rate Override (Optional BDT)</label>
+                            <input type="number" id="prof-rate" value="${p.customRate || ''}" placeholder="Default Rate Rules Apply If Empty" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-800 text-white text-xs">
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl gold-gradient-bg text-obsidian font-bold text-xs uppercase tracking-wider">
+                            Save Profile
+                        </button>
+                    </form>
+                </div>
+            `);
+        }
+
+        function handleSaveProfile(e, id) {
+            e.preventDefault();
+            const name = document.getElementById('prof-name').value.trim();
+            const code = document.getElementById('prof-code').value.trim();
+            const category = document.getElementById('prof-cat').value;
+            const rateVal = document.getElementById('prof-rate').value;
+
+            const photoFiles = document.getElementById('prof-photos').files;
+            const photos = [];
+            if (photoFiles.length > 0) {
+                for (let i = 0; i < Math.min(photoFiles.length, 5); i++) {
+                    photos.push(URL.createObjectURL(photoFiles[i]));
+                }
+            }
+
+            const videoFile = document.getElementById('prof-video').files[0];
+            const videoUrl = videoFile ? URL.createObjectURL(videoFile) : "";
+
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+
+            if (id) {
+                const p = profiles.find(x => x.id === id);
+                if (p) {
+                    p.name = name;
+                    p.code = code;
+                    p.category = category;
+                    if (photos.length > 0) p.photos = photos;
+                    if (videoUrl) p.video = videoUrl;
+                    p.customRate = rateVal ? parseFloat(rateVal) : null;
+                }
+            } else {
+                profiles.push({
+                    id: Date.now(),
+                    code,
+                    name,
+                    category,
+                    photos: photos.length > 0 ? photos : ["https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"],
+                    video: videoUrl,
+                    status: 'available',
+                    customRate: rateVal ? parseFloat(rateVal) : null
+                });
+            }
+
+            localStorage.setItem('trcp_profiles', JSON.stringify(profiles));
+            closeModal();
+            showToast("Profile saved successfully.", "success");
+            renderCurrentView();
+        }
+
+        // GALLERY MODAL SLIDER WITH VIDEO SUPPORT
+        let currentSlideIndex = 0;
+        function openProfileGalleryModal(id) {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            const p = profiles.find(x => x.id === id);
+            if (!p) return;
+
+            currentSlideIndex = 0;
+            const mediaItems = [...p.photos];
+            if (p.video) mediaItems.push({ type: 'video', url: p.video });
+
+            showModal(`
+                <div class="glass-card p-6 rounded-3xl max-w-lg w-full space-y-4 border gold-border animate-fade-in relative">
+                    <button onclick="closeModal()" class="absolute top-4 right-4 z-20 text-zinc-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                    <div class="text-center space-y-1">
+                        <h3 class="font-serif text-xl font-bold text-white">${p.name} (#${p.code})</h3>
+                        <div class="text-xs text-gold">${p.category} Profile Media</div>
+                    </div>
+
+                    <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-obsidian border border-zinc-800" id="gallery-viewport">
+                        ${renderSlideMedia(mediaItems[0])}
+                    </div>
+
+                    ${mediaItems.length > 1 ? `
+                        <div class="flex justify-between items-center pt-2">
+                            <button onclick="prevSlide(${id})" class="px-4 py-2 rounded-xl bg-zinc-800 text-white text-xs font-bold"><i class="fa-solid fa-chevron-left"></i> Prev</button>
+                            <span class="text-xs text-zinc-400" id="slide-counter">1 / ${mediaItems.length}</span>
+                            <button onclick="nextSlide(${id})" class="px-4 py-2 rounded-xl bg-zinc-800 text-white text-xs font-bold">Next <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    ` : ''}
+                </div>
+            `);
+        }
+
+        function renderSlideMedia(item) {
+            if (typeof item === 'object' && item.type === 'video') {
+                return `<video src="${item.url}" controls autoplay class="w-full h-full object-cover"></video>`;
+            } else {
+                return `<img src="${item}" class="w-full h-full object-cover">`;
+            }
+        }
+
+        function nextSlide(profileId) {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            const p = profiles.find(x => x.id === profileId);
+            const mediaItems = [...p.photos];
+            if (p.video) mediaItems.push({ type: 'video', url: p.video });
+
+            currentSlideIndex = (currentSlideIndex + 1) % mediaItems.length;
+            document.getElementById('gallery-viewport').innerHTML = renderSlideMedia(mediaItems[currentSlideIndex]);
+            document.getElementById('slide-counter').innerText = `${currentSlideIndex + 1} / ${mediaItems.length}`;
+        }
+
+        function prevSlide(profileId) {
+            const profiles = JSON.parse(localStorage.getItem('trcp_profiles')) || [];
+            const p = profiles.find(x => x.id === profileId);
+            const mediaItems = [...p.photos];
+            if (p.video) mediaItems.push({ type: 'video', url: p.video });
+
+            currentSlideIndex = (currentSlideIndex - 1 + mediaItems.length) % mediaItems.length;
+            document.getElementById('gallery-viewport').innerHTML = renderSlideMedia(mediaItems[currentSlideIndex]);
+            document.getElementById('slide-counter').innerText = `${currentSlideIndex + 1} / ${mediaItems.length}`;
+        }
+
+        // GLOBAL UTILITIES
+        function showModal(html) {
+            const wrapper = document.getElementById('modal-wrapper');
+            wrapper.innerHTML = html;
+            wrapper.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const wrapper = document.getElementById('modal-wrapper');
+            wrapper.innerHTML = '';
+            wrapper.classList.add('hidden');
+        }
+
+        function showToast(msg, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-6 left-6 z-50 px-6 py-3 rounded-2xl text-xs font-bold shadow-2xl transition-all duration-300 animate-bounce ${type === 'success' ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-red-950 text-red-300 border border-red-800'}`;
+            toast.innerHTML = `<i class="fa-solid ${type === 'success' ? 'fa-circle-check' : 'fa-triangle-exclamation'} mr-2"></i> ${msg}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3200);
+        }
+
+        function toggleHelpline() {
+            document.getElementById('helpline-dropdown').classList.toggle('hidden');
+        }
+
+        // APPLICATION INIT
+        window.onload = function() {
+            renderCurrentView();
+        };
+    </script>
+</body>
+</html>
